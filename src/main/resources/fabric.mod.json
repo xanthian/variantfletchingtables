@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "variantfletchingtables",
+  "version": "${version}",
+  "name": "Variant Fletching Tables",
+  "description": "Fletching Tables for all wood types",
+  "authors": ["Xanthian"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["net.xanthian.variantfletchingtables.Initialise"],
+    "fabric-datagen": ["net.xanthian.variantfletchingtables.DataGenerator"]
+  },
+  "mixins": ["variantfletchingtables.mixins.json"],
+  "accessWidener": "variantfletchingtables.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.14.19",
+    "fabric": "*",
+    "minecraft": "1.20.x",
+    "java": ">=17"
+    }
+}

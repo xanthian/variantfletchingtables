@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:block/warped_planks",
+    "east": "variantfletchingtables:block/warped_fletching_table_side",
+    "north": "variantfletchingtables:block/warped_fletching_table_front",
+    "particle": "variantfletchingtables:block/warped_fletching_table_front",
+    "south": "variantfletchingtables:block/warped_fletching_table_front",
+    "up": "variantfletchingtables:block/warped_fletching_table_top",
+    "west": "variantfletchingtables:block/warped_fletching_table_side"
+  }
+}
