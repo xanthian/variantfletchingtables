@@ -47,5 +47,6 @@ public class FletchingTables {
         Identifier identifier = new Identifier(Initialise.MOD_ID, Id.toLowerCase());
         Registry.register(Registries.BLOCK, identifier, block);
         Registry.register(Registries.ITEM, identifier, new BlockItem(block, new FabricItemSettings()));
+        MOD_FLETCHING_TABLES.put(identifier, block);
     }
 }

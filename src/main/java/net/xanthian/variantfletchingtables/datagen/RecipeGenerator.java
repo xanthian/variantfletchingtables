@@ -111,5 +111,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .pattern("##")
                 .criterion(FabricRecipeProvider.hasItem(Items.FLINT), FabricRecipeProvider.conditionsFromItem(Items.FLINT))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(FletchingTables.WARPED_FLETCHING_TABLE)));
+
+        // Uncrafting Recipe
     }
 }
