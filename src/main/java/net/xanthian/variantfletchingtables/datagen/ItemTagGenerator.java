@@ -48,14 +48,14 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.NON_FLAMMABLE_WOOD)
                 .add(Vanilla.CRIMSON_FLETCHING_TABLE.asItem())
                 .add(Vanilla.WARPED_FLETCHING_TABLE.asItem())
-                .addOptional(new Identifier("variantcraftingtables:bls_herringbone_charred_fletching_table"))
-                .addOptional(new Identifier("variantcraftingtables:bls_herringbone_crimson_fletching_table"))
-                .addOptional(new Identifier("variantcraftingtables:bls_herringbone_warped_fletching_table"))
-                .addOptional(new Identifier("variantbookshelves:prom_dark_amaranth_fletching_table"))
-                .addOptional(new Identifier("variantbookshelves:ru_brimwood_fletching_table"))
-                .addOptional(new Identifier("variantbookshelves:ru_cobalt_fletching_table"))
-                .addOptional(new Identifier("variantbookshelves:ru_dead_fletching_table"))
-                .addOptional(new Identifier("variantbookshelves:ru_yellow_bioshroom_fletching_table"));
+                .addOptional(new Identifier("variantfletchingtables:bls_herringbone_charred_fletching_table"))
+                .addOptional(new Identifier("variantfletchingtables:bls_herringbone_crimson_fletching_table"))
+                .addOptional(new Identifier("variantfletchingtables:bls_herringbone_warped_fletching_table"))
+                .addOptional(new Identifier("variantfletchingtables:prom_dark_amaranth_fletching_table"))
+                .addOptional(new Identifier("variantfletchingtables:ru_brimwood_fletching_table"))
+                .addOptional(new Identifier("variantfletchingtables:ru_cobalt_fletching_table"))
+                .addOptional(new Identifier("variantfletchingtables:ru_dead_fletching_table"))
+                .addOptional(new Identifier("variantfletchingtables:ru_yellow_bioshroom_fletching_table"));
 
         getOrCreateTagBuilder(C_JOB_SITE)
                 .addTag(ModItemTags.FLETCHING_TABLES);
