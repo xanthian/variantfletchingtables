@@ -2,14 +2,13 @@ package net.xanthian.variantfletchingtables.block.compatability;
 
 import com.google.common.collect.Maps;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.xanthian.variantfletchingtables.Initialise;
+import net.xanthian.variantfletchingtables.block.VariantFletchingTableBlock;
 
 import java.util.Map;
 
@@ -114,6 +113,6 @@ public class RegionsUnexplored {
     }
 
     public static Block registerFletchingTable(String name) {
-        return register(name, new Block(FabricBlockSettings.copy(Blocks.FLETCHING_TABLE)));
+        return register(name, new VariantFletchingTableBlock());
     }
 }

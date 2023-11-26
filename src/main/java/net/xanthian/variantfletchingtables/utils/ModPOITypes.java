@@ -26,7 +26,7 @@ public class ModPOITypes {
         List<BlockState> fletcherBlockStates = new ArrayList<>(fletcherPoiType.blockStates);
 
         for (Block block : Registries.BLOCK) { // Iterate through all blocks
-            if (block instanceof VariantFletchingTableBlock fletchingTableBlock) { // Check if the block is an instance of VariantBarrelBlock
+            if (block instanceof VariantFletchingTableBlock fletchingTableBlock) { // Check if the block is an instance of VariantFletchingTableBlock
                 ImmutableList<BlockState> blockStates = fletchingTableBlock.getStateManager().getStates();
 
                 for (BlockState blockState : blockStates) {

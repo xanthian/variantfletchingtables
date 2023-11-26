@@ -62,12 +62,12 @@ public class Initialise implements ModInitializer {
         ModPOITypes.init();
 
         //Datagen Block - disable for client run
-        //SnifferPlus.registerFletchingTables();
-        //RegionsUnexplored.register04FletchingTables();
-        //NaturesSpirit.registerFletchingTables();
-        //DeeperAndDarker.registerFletchingTables();
-        //BiomeMakeover.registerFletchingTables();
-        //AdAstra.registerFletchingTables();
+        SnifferPlus.registerFletchingTables();
+        RegionsUnexplored.register04FletchingTables();
+        NaturesSpirit.registerFletchingTables();
+        DeeperAndDarker.registerFletchingTables();
+        BiomeMakeover.registerFletchingTables();
+        AdAstra.registerFletchingTables();
 
     }
 
