@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "biomemakeover:block/willow_planks",
+    "east": "variantfletchingtables:block/bm_willow_fletching_table_side",
+    "north": "variantfletchingtables:block/bm_willow_fletching_table_front",
+    "particle": "variantfletchingtables:block/bm_willow_fletching_table_front",
+    "south": "variantfletchingtables:block/bm_willow_fletching_table_front",
+    "up": "variantfletchingtables:block/bm_willow_fletching_table_top",
+    "west": "variantfletchingtables:block/bm_willow_fletching_table_side"
+  }
+}

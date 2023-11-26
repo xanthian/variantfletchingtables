@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "variantfletchingtables:block/ee_primordial_fletching_table"
+    }
+  }
+}

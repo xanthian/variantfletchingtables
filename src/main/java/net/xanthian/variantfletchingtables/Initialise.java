@@ -1,19 +1,13 @@
 package net.xanthian.variantfletchingtables;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-
-import net.minecraft.block.Blocks;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
-
-import net.xanthian.variantfletchingtables.block.FletchingTables;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
+import net.fabricmc.loader.api.Version;
+import net.fabricmc.loader.api.metadata.ModMetadata;
+import net.xanthian.variantfletchingtables.block.Vanilla;
+import net.xanthian.variantfletchingtables.block.compatability.*;
+import net.xanthian.variantfletchingtables.utils.ModCreativeTab;
 import net.xanthian.variantfletchingtables.utils.ModPOITypes;
 import net.xanthian.variantfletchingtables.utils.ModRegistries;
 
@@ -21,36 +15,75 @@ public class Initialise implements ModInitializer {
 
     public static final String MOD_ID = "variantfletchingtables";
 
-    public static final RegistryKey<ItemGroup> ITEM_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MOD_ID, "variantfletchingtables"));
-
     @Override
     public void onInitialize() {
-        // Custom Item Group
-        Registry.register(Registries.ITEM_GROUP, ITEM_GROUP, FabricItemGroup.builder()
-                .displayName(Text.translatable("variantfletchingtables.group.variantfletchingtables"))
-                .icon(() -> new ItemStack(FletchingTables.MANGROVE_FLETCHING_TABLE))
-                .entries((context, entries) -> {
-                    entries.add(FletchingTables.ACACIA_FLETCHING_TABLE);
-                    entries.add(FletchingTables.BAMBOO_FLETCHING_TABLE);
-                    entries.add(Blocks.FLETCHING_TABLE); // Birch
-                    entries.add(FletchingTables.CHERRY_FLETCHING_TABLE);
-                    entries.add(FletchingTables.CRIMSON_FLETCHING_TABLE);
-                    entries.add(FletchingTables.DARK_OAK_FLETCHING_TABLE);
-                    entries.add(FletchingTables.JUNGLE_FLETCHING_TABLE);
-                    entries.add(FletchingTables.MANGROVE_FLETCHING_TABLE);
-                    entries.add(FletchingTables.OAK_FLETCHING_TABLE);
-                    entries.add(FletchingTables.SPRUCE_FLETCHING_TABLE);
-                    entries.add(FletchingTables.WARPED_FLETCHING_TABLE);
-                })
-                .build());
 
-        // Fletching Table Registration
-        FletchingTables.registerVanillaTables();
+        Vanilla.registerVanillaTables();
 
-        // Fuel & Flammable Block registration
+        ifModLoaded("ad_astra", AdAstra::registerFletchingTables);
+
+        ifModLoaded("beachparty", BeachParty::registerFletchingTables);
+
+        ifModLoaded("betterarcheology", BetterArcheology::registerFletchingTables);
+
+        ifModLoaded("bewitchment", Bewitchment::registerFletchingTables);
+
+        ifModLoaded("biomemakeover", BiomeMakeover::registerFletchingTables);
+
+        ifModLoaded("blockus", Blockus::registerFletchingTables);
+
+        ifModLoaded("deeperdarker", DeeperAndDarker::registerFletchingTables);
+
+        ifModLoaded("eldritch_end", EldritchEnd::registerFletchingTables);
+
+        ifModLoaded("minecells", MineCells::registerFletchingTables);
+
+        ifModLoaded("natures_spirit", NaturesSpirit::registerFletchingTables);
+
+        ifModLoaded("promenade", Promenade::registerFletchingTables);
+
+        ifModLoaded("regions_unexplored", () -> {
+            RegionsUnexplored.registerFletchingTables();
+            if (isModVersion("regions_unexplored", "0.4")) {
+                RegionsUnexplored.register04FletchingTables();
+            } else {
+                RegionsUnexplored.register05FletchingTables();
+            }
+        });
+
+        ifModLoaded("snifferplus", SnifferPlus::registerFletchingTables);
+
+        ifModLoaded("techreborn", TechReborn::registerFletchingTables);
+
+        ifModLoaded("vinery", Vinery::registerFletchingTables);
+
         ModRegistries.registerFuelandFlammable();
-
-        // Fletcher POI Registration
+        ModCreativeTab.registerItemGroup();
         ModPOITypes.init();
+
+        //Datagen Block - disable for client run
+        //SnifferPlus.registerFletchingTables();
+        //RegionsUnexplored.register04FletchingTables();
+        //NaturesSpirit.registerFletchingTables();
+        //DeeperAndDarker.registerFletchingTables();
+        //BiomeMakeover.registerFletchingTables();
+        //AdAstra.registerFletchingTables();
+
+    }
+
+    public static boolean isModVersion(String modId, String ver) {
+        return FabricLoader.getInstance()
+                .getModContainer(modId)
+                .map(ModContainer::getMetadata)
+                .map(ModMetadata::getVersion)
+                .map(Version::getFriendlyString)
+                .filter(version -> version.startsWith(ver))
+                .isPresent();
+    }
+
+    public static void ifModLoaded(String modId, Runnable runnable) {
+        if (FabricLoader.getInstance().isModLoaded(modId)) {
+            runnable.run();
+        }
     }
 }

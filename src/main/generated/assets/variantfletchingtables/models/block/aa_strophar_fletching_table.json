@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "ad_astra:block/strophar_planks",
+    "east": "variantfletchingtables:block/aa_strophar_fletching_table_side",
+    "north": "variantfletchingtables:block/aa_strophar_fletching_table_front",
+    "particle": "variantfletchingtables:block/aa_strophar_fletching_table_front",
+    "south": "variantfletchingtables:block/aa_strophar_fletching_table_front",
+    "up": "variantfletchingtables:block/aa_strophar_fletching_table_top",
+    "west": "variantfletchingtables:block/aa_strophar_fletching_table_side"
+  }
+}

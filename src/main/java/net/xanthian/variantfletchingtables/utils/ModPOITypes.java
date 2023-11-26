@@ -8,7 +8,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.poi.PointOfInterestType;
 import net.minecraft.world.poi.PointOfInterestTypes;
-import net.xanthian.variantfletchingtables.block.FletchingTables;
+import net.xanthian.variantfletchingtables.block.VariantFletchingTableBlock;
 import net.xanthian.variantfletchingtables.mixin.PointOfInterestTypesAccessor;
 
 import java.util.ArrayList;
@@ -20,26 +20,22 @@ public class ModPOITypes {
 
         Map<BlockState, RegistryEntry<PointOfInterestType>> poiStatesToType = PointOfInterestTypesAccessor
                 .getPointOfInterestStatesToType();
-
         RegistryEntry<PointOfInterestType> fletcherEntry = Registries.POINT_OF_INTEREST_TYPE
                 .getEntry(PointOfInterestTypes.FLETCHER).get();
-
         PointOfInterestType fletcherPoiType = Registries.POINT_OF_INTEREST_TYPE.get(PointOfInterestTypes.FLETCHER);
+        List<BlockState> fletcherBlockStates = new ArrayList<>(fletcherPoiType.blockStates);
 
-        // NOTE: PointOfInterestType.blockStates is accessible by access widener
-        List<BlockState> fletcherBlockStates = new ArrayList<BlockState>(fletcherPoiType.blockStates);
+        for (Block block : Registries.BLOCK) { // Iterate through all blocks
+            if (block instanceof VariantFletchingTableBlock fletchingTableBlock) { // Check if the block is an instance of VariantBarrelBlock
+                ImmutableList<BlockState> blockStates = fletchingTableBlock.getStateManager().getStates();
 
-        for (Block block : FletchingTables.MOD_FLETCHING_TABLES.values()) {
-            ImmutableList<BlockState> blockStates = block.getStateManager().getStates();
+                for (BlockState blockState : blockStates) {
+                    poiStatesToType.putIfAbsent(blockState, fletcherEntry);
+                }
 
-            for (BlockState blockState : blockStates) {
-                poiStatesToType.putIfAbsent(blockState, fletcherEntry);
+                fletcherBlockStates.addAll(blockStates);
             }
-
-            fletcherBlockStates.addAll(blockStates);
         }
-
-        // NOTE: PointOfInterestType.blockStates is mutable by access widener
         fletcherPoiType.blockStates = ImmutableSet.copyOf(fletcherBlockStates);
     }
 }

@@ -1,0 +1,29 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "promenade"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "promenade:dark_amaranth_planks"
+    },
+    "@": {
+      "item": "minecraft:flint"
+    }
+  },
+  "pattern": [
+    "@@",
+    "##",
+    "##"
+  ],
+  "result": {
+    "item": "variantfletchingtables:prom_dark_amaranth_fletching_table"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecells:block/putrid_planks",
+    "east": "variantfletchingtables:block/mc_putrid_fletching_table_side",
+    "north": "variantfletchingtables:block/mc_putrid_fletching_table_front",
+    "particle": "variantfletchingtables:block/mc_putrid_fletching_table_front",
+    "south": "variantfletchingtables:block/mc_putrid_fletching_table_front",
+    "up": "variantfletchingtables:block/mc_putrid_fletching_table_top",
+    "west": "variantfletchingtables:block/mc_putrid_fletching_table_side"
+  }
+}

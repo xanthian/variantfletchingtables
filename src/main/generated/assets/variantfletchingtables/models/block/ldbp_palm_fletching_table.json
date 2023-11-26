@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "beachparty:block/palm_planks0",
+    "east": "variantfletchingtables:block/ldbp_palm_fletching_table_side",
+    "north": "variantfletchingtables:block/ldbp_palm_fletching_table_front",
+    "particle": "variantfletchingtables:block/ldbp_palm_fletching_table_front",
+    "south": "variantfletchingtables:block/ldbp_palm_fletching_table_front",
+    "up": "variantfletchingtables:block/ldbp_palm_fletching_table_top",
+    "west": "variantfletchingtables:block/ldbp_palm_fletching_table_side"
+  }
+}

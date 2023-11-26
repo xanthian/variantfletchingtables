@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "variantfletchingtables:block/ns_redwood_fletching_table"
+    }
+  }
+}

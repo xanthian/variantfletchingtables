@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:acacia_fletching_table"
+        "recipe": "variantfletchingtables:acacia_fletching_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:acacia_fletching_table"
+      "variantfletchingtables:acacia_fletching_table"
     ]
   },
   "sends_telemetry_event": false
