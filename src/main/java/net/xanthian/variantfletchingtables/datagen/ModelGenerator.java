@@ -41,7 +41,10 @@ public class ModelGenerator extends FabricModelProvider {
         registerModel(blockStateModelGenerator, Bewitchment.BW_FLETCHING_TABLES, "bewitchment", plankName -> plankName + "_planks");
         registerModel(blockStateModelGenerator, BiomeMakeover.BM_FLETCHING_TABLES, "biomemakeover", plankName -> plankName + "_planks");
         registerModel(blockStateModelGenerator, Blockus.BLS_FLETCHING_TABLES, "blockus", plankName -> plankName + "_planks");
+        registerModel(blockStateModelGenerator, Botania.BOT_FLETCHING_TABLES, "botania", plankName -> plankName + "_planks");
+        registerModel(blockStateModelGenerator, Cinderscapes.CS_FLETCHING_TABLES, "cinderscapes", plankName -> plankName + "_planks");
         registerModel(blockStateModelGenerator, DeeperAndDarker.DAD_FLETCHING_TABLES, "deeperdarker", plankName -> plankName + "_planks");
+        registerModel(blockStateModelGenerator, Desolation.DS_FLETCHING_TABLES, "desolation", plankName -> plankName + "_planks");
         registerModel(blockStateModelGenerator, EldritchEnd.EE_FLETCHING_TABLES, "eldritch_end", plankName -> plankName + "_planks");
         registerModel(blockStateModelGenerator, MineCells.MC_FLETCHING_TABLES, "minecells", plankName -> plankName + "_planks");
         registerModel(blockStateModelGenerator, NaturesSpirit.NS_FLETCHING_TABLES, "natures_spirit", plankName -> plankName + "_planks");

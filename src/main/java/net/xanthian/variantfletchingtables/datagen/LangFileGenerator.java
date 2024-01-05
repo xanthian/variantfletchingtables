@@ -58,7 +58,10 @@ public class LangFileGenerator extends FabricLanguageProvider {
         registerTranslations(translationBuilder, Bewitchment.BW_FLETCHING_TABLES);
         registerTranslations(translationBuilder, BiomeMakeover.BM_FLETCHING_TABLES);
         registerTranslations(translationBuilder, Blockus.BLS_FLETCHING_TABLES);
+        registerTranslations(translationBuilder, Botania.BOT_FLETCHING_TABLES);
+        registerTranslations(translationBuilder, Cinderscapes.CS_FLETCHING_TABLES);
         registerTranslations(translationBuilder, DeeperAndDarker.DAD_FLETCHING_TABLES);
+        registerTranslations(translationBuilder, Desolation.DS_FLETCHING_TABLES);
         registerTranslations(translationBuilder, EldritchEnd.EE_FLETCHING_TABLES);
         registerTranslations(translationBuilder, MineCells.MC_FLETCHING_TABLES);
         registerTranslations(translationBuilder, NaturesSpirit.NS_FLETCHING_TABLES);

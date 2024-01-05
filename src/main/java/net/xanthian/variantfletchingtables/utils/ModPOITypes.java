@@ -18,10 +18,8 @@ import java.util.Map;
 public class ModPOITypes {
     public static void init() {
 
-        Map<BlockState, RegistryEntry<PointOfInterestType>> poiStatesToType = PointOfInterestTypesAccessor
-                .getPointOfInterestStatesToType();
-        RegistryEntry<PointOfInterestType> fletcherEntry = Registries.POINT_OF_INTEREST_TYPE
-                .getEntry(PointOfInterestTypes.FLETCHER).get();
+        Map<BlockState, RegistryEntry<PointOfInterestType>> poiStatesToType = PointOfInterestTypesAccessor.getPointOfInterestStatesToType();
+        RegistryEntry<PointOfInterestType> fletcherEntry = Registries.POINT_OF_INTEREST_TYPE.getEntry(PointOfInterestTypes.FLETCHER).get();
         PointOfInterestType fletcherPoiType = Registries.POINT_OF_INTEREST_TYPE.get(PointOfInterestTypes.FLETCHER);
         List<BlockState> fletcherBlockStates = new ArrayList<>(fletcherPoiType.blockStates);
 

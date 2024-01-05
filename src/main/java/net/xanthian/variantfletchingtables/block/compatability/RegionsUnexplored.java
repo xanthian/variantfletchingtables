@@ -50,10 +50,13 @@ public class RegionsUnexplored {
     public static Block RU_CHERRY_FLETCHING_TABLE;
     public static Block RU_SCULKWOOD_FLETCHING_TABLE;
 
+    public static Block RU_BLUE_BIOSHROOM_FLETCHING_TABLE;
     public static Block RU_BRIMWOOD_FLETCHING_TABLE;
     public static Block RU_COBALT_FLETCHING_TABLE;
+    public static Block RU_GREEN_BIOSHROOM_FLETCHING_TABLE;
     public static Block RU_KAPOK_FLETCHING_TABLE;
     public static Block RU_MAGNOLIA_FLETCHING_TABLE;
+    public static Block RU_PINK_BIOSHROOM_FLETCHING_TABLE;
     public static Block RU_SOCOTRA_FLETCHING_TABLE;
     public static Block RU_YELLOW_BIOSHROOM_FLETCHING_TABLE;
 
@@ -88,18 +91,17 @@ public class RegionsUnexplored {
         RU_WHITE_PAINTED_FLETCHING_TABLE = registerFletchingTable("ru_white_painted_fletching_table");
         RU_WILLOW_FLETCHING_TABLE = registerFletchingTable("ru_willow_fletching_table");
         RU_YELLOW_PAINTED_FLETCHING_TABLE = registerFletchingTable("ru_yellow_painted_fletching_table");
-    }
 
-    public static void register04FletchingTables() {
         RU_CHERRY_FLETCHING_TABLE = registerFletchingTable("ru_cherry_fletching_table");
         RU_SCULKWOOD_FLETCHING_TABLE = registerFletchingTable("ru_sculkwood_fletching_table");
-    }
 
-    public static void register05FletchingTables() {
+        RU_BLUE_BIOSHROOM_FLETCHING_TABLE = registerFletchingTable("ru_blue_bioshroom_fletching_table");
         RU_BRIMWOOD_FLETCHING_TABLE = registerFletchingTable("ru_brimwood_fletching_table");
         RU_COBALT_FLETCHING_TABLE = registerFletchingTable("ru_cobalt_fletching_table");
+        RU_GREEN_BIOSHROOM_FLETCHING_TABLE = registerFletchingTable("ru_green_bioshroom_fletching_table");
         RU_KAPOK_FLETCHING_TABLE = registerFletchingTable("ru_kapok_fletching_table");
         RU_MAGNOLIA_FLETCHING_TABLE = registerFletchingTable("ru_magnolia_fletching_table");
+        RU_PINK_BIOSHROOM_FLETCHING_TABLE = registerFletchingTable("ru_pink_bioshroom_fletching_table");
         RU_SOCOTRA_FLETCHING_TABLE = registerFletchingTable("ru_socotra_fletching_table");
         RU_YELLOW_BIOSHROOM_FLETCHING_TABLE = registerFletchingTable("ru_yellow_bioshroom_fletching_table");
     }

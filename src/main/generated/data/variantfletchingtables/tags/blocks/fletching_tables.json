@@ -106,7 +106,31 @@
       "required": false
     },
     {
+      "id": "variantfletchingtables:bot_dreamwood_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:bot_shimmerwood_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:bot_livingwood_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:cs_scorched_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:cs_umbral_fletching_table",
+      "required": false
+    },
+    {
       "id": "variantfletchingtables:dad_echo_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:ds_charred_fletching_table",
       "required": false
     },
     {
@@ -182,6 +206,10 @@
       "required": false
     },
     {
+      "id": "variantfletchingtables:ru_pink_bioshroom_fletching_table",
+      "required": false
+    },
+    {
       "id": "variantfletchingtables:ru_joshua_fletching_table",
       "required": false
     },
@@ -246,6 +274,10 @@
       "required": false
     },
     {
+      "id": "variantfletchingtables:ru_blue_bioshroom_fletching_table",
+      "required": false
+    },
+    {
       "id": "variantfletchingtables:ru_brown_painted_fletching_table",
       "required": false
     },
@@ -283,6 +315,10 @@
     },
     {
       "id": "variantfletchingtables:ru_yellow_bioshroom_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:ru_green_bioshroom_fletching_table",
       "required": false
     },
     {

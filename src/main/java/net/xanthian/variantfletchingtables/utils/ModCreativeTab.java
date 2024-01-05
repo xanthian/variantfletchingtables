@@ -14,8 +14,6 @@ import net.xanthian.variantfletchingtables.Initialise;
 import net.xanthian.variantfletchingtables.block.Vanilla;
 import net.xanthian.variantfletchingtables.block.compatability.*;
 
-import static net.xanthian.variantfletchingtables.Initialise.isModVersion;
-
 public class ModCreativeTab {
 
     public static final ItemGroup ITEM_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -62,8 +60,21 @@ public class ModCreativeTab {
                                 entries.add(block);
                             }
                         }
+                        if (FabricLoader.getInstance().isModLoaded("botania")) {
+                            for (Block block : Botania.BOT_FLETCHING_TABLES.values()) {
+                                entries.add(block);
+                            }
+                        }
+                        if (FabricLoader.getInstance().isModLoaded("cinderscapes")) {
+                            for (Block block : Cinderscapes.CS_FLETCHING_TABLES.values()) {
+                                entries.add(block);
+                            }
+                        }
                         if (FabricLoader.getInstance().isModLoaded("deeperdarker")) {
                             entries.add(DeeperAndDarker.DAD_ECHO_FLETCHING_TABLE);
+                        }
+                        if (FabricLoader.getInstance().isModLoaded("desolation")) {
+                            entries.add(Desolation.DS_CHARRED_FLETCHING_TABLE);
                         }
                         if (FabricLoader.getInstance().isModLoaded("eldritch_end")) {
                             entries.add(EldritchEnd.EE_PRIMORDIAL_FLETCHING_TABLE);
@@ -82,46 +93,8 @@ public class ModCreativeTab {
                             }
                         }
                         if (FabricLoader.getInstance().isModLoaded("regions_unexplored")) {
-                            entries.add(RegionsUnexplored.RU_ALPHA_OAK_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_BAOBAB_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_BLACK_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_BLACKWOOD_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_BLUE_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_BROWN_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_CYAN_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_CYPRESS_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_DEAD_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_EUCALYPTUS_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_GRAY_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_GREEN_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_JOSHUA_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_LARCH_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_LIGHT_BLUE_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_LIGHT_GRAY_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_LIME_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_MAGENTA_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_MAPLE_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_MAUVE_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_ORANGE_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_PALM_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_PINE_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_PINK_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_PURPLE_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_REDWOOD_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_RED_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_WHITE_PAINTED_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_WILLOW_FLETCHING_TABLE);
-                            entries.add(RegionsUnexplored.RU_YELLOW_PAINTED_FLETCHING_TABLE);
-                            if (isModVersion("regions_unexplored", "0.4")) {
-                                entries.add(RegionsUnexplored.RU_CHERRY_FLETCHING_TABLE);
-                                entries.add(RegionsUnexplored.RU_SCULKWOOD_FLETCHING_TABLE);
-                            } else {
-                                entries.add(RegionsUnexplored.RU_BRIMWOOD_FLETCHING_TABLE);
-                                entries.add(RegionsUnexplored.RU_COBALT_FLETCHING_TABLE);
-                                entries.add(RegionsUnexplored.RU_KAPOK_FLETCHING_TABLE);
-                                entries.add(RegionsUnexplored.RU_MAGNOLIA_FLETCHING_TABLE);
-                                entries.add(RegionsUnexplored.RU_SOCOTRA_FLETCHING_TABLE);
-                                entries.add(RegionsUnexplored.RU_YELLOW_BIOSHROOM_FLETCHING_TABLE);
+                            for (Block block : RegionsUnexplored.RU_FLETCHING_TABLES.values()) {
+                                entries.add(block);
                             }
                         }
                         if (FabricLoader.getInstance().isModLoaded("snifferplus")) {

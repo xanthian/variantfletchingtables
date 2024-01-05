@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "cinderscapes:block/umbral_planks",
+    "east": "variantfletchingtables:block/cs_umbral_fletching_table_side",
+    "north": "variantfletchingtables:block/cs_umbral_fletching_table_front",
+    "particle": "variantfletchingtables:block/cs_umbral_fletching_table_front",
+    "south": "variantfletchingtables:block/cs_umbral_fletching_table_front",
+    "up": "variantfletchingtables:block/cs_umbral_fletching_table_top",
+    "west": "variantfletchingtables:block/cs_umbral_fletching_table_side"
+  }
+}

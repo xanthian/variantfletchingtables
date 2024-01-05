@@ -35,7 +35,10 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
         registerTags(Bewitchment.BW_FLETCHING_TABLES);
         registerTags(BiomeMakeover.BM_FLETCHING_TABLES);
         registerTags(Blockus.BLS_FLETCHING_TABLES);
+        registerTags(Botania.BOT_FLETCHING_TABLES);
+        registerTags(Cinderscapes.CS_FLETCHING_TABLES);
         registerTags(DeeperAndDarker.DAD_FLETCHING_TABLES);
+        registerTags(Desolation.DS_FLETCHING_TABLES);
         registerTags(EldritchEnd.EE_FLETCHING_TABLES);
         registerTags(MineCells.MC_FLETCHING_TABLES);
         registerTags(NaturesSpirit.NS_FLETCHING_TABLES);

@@ -2,9 +2,6 @@ package net.xanthian.variantfletchingtables;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
-import net.fabricmc.loader.api.ModContainer;
-import net.fabricmc.loader.api.Version;
-import net.fabricmc.loader.api.metadata.ModMetadata;
 import net.xanthian.variantfletchingtables.block.Vanilla;
 import net.xanthian.variantfletchingtables.block.compatability.*;
 import net.xanthian.variantfletchingtables.utils.ModCreativeTab;
@@ -14,6 +11,12 @@ import net.xanthian.variantfletchingtables.utils.ModRegistries;
 public class Initialise implements ModInitializer {
 
     public static final String MOD_ID = "variantfletchingtables";
+
+    public static void ifModLoaded(String modId, Runnable runnable) {
+        if (FabricLoader.getInstance().isModLoaded(modId)) {
+            runnable.run();
+        }
+    }
 
     @Override
     public void onInitialize() {
@@ -32,7 +35,13 @@ public class Initialise implements ModInitializer {
 
         ifModLoaded("blockus", Blockus::registerFletchingTables);
 
+        ifModLoaded("botania", Botania::registerFletchingTables);
+
+        ifModLoaded("cinderscapes", Cinderscapes::registerFletchingTables);
+
         ifModLoaded("deeperdarker", DeeperAndDarker::registerFletchingTables);
+
+        ifModLoaded("desolation", Desolation::registerFletchingTables);
 
         ifModLoaded("eldritch_end", EldritchEnd::registerFletchingTables);
 
@@ -42,14 +51,7 @@ public class Initialise implements ModInitializer {
 
         ifModLoaded("promenade", Promenade::registerFletchingTables);
 
-        ifModLoaded("regions_unexplored", () -> {
-            RegionsUnexplored.registerFletchingTables();
-            if (isModVersion("regions_unexplored", "0.4")) {
-                RegionsUnexplored.register04FletchingTables();
-            } else {
-                RegionsUnexplored.register05FletchingTables();
-            }
-        });
+        ifModLoaded("regions_unexplored", RegionsUnexplored::registerFletchingTables);
 
         ifModLoaded("snifferplus", SnifferPlus::registerFletchingTables);
 
@@ -63,27 +65,6 @@ public class Initialise implements ModInitializer {
 
         //Datagen Block - disable for client run
         //SnifferPlus.registerFletchingTables();
-        //RegionsUnexplored.register04FletchingTables();
-        //NaturesSpirit.registerFletchingTables();
-        //DeeperAndDarker.registerFletchingTables();
-        //BiomeMakeover.registerFletchingTables();
-        //AdAstra.registerFletchingTables();
-
-    }
-
-    public static boolean isModVersion(String modId, String ver) {
-        return FabricLoader.getInstance()
-                .getModContainer(modId)
-                .map(ModContainer::getMetadata)
-                .map(ModMetadata::getVersion)
-                .map(Version::getFriendlyString)
-                .filter(version -> version.startsWith(ver))
-                .isPresent();
-    }
-
-    public static void ifModLoaded(String modId, Runnable runnable) {
-        if (FabricLoader.getInstance().isModLoaded(modId)) {
-            runnable.run();
-        }
+        //Botania.registerFletchingTables();
     }
 }

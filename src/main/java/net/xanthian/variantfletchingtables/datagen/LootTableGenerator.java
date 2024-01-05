@@ -27,7 +27,10 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
         registerLootTables(Bewitchment.BW_FLETCHING_TABLES, "bewitchment");
         registerLootTables(BiomeMakeover.BM_FLETCHING_TABLES, "biomemakeover");
         registerLootTables(Blockus.BLS_FLETCHING_TABLES, "blockus");
+        registerLootTables(Botania.BOT_FLETCHING_TABLES, "botania");
+        registerLootTables(Cinderscapes.CS_FLETCHING_TABLES, "cinderscape");
         registerLootTables(DeeperAndDarker.DAD_FLETCHING_TABLES, "deeperdarker");
+        registerLootTables(Desolation.DS_FLETCHING_TABLES, "desolation");
         registerLootTables(EldritchEnd.EE_FLETCHING_TABLES, "eldritch_end");
         registerLootTables(MineCells.MC_FLETCHING_TABLES, "minecells");
         registerLootTables(NaturesSpirit.NS_FLETCHING_TABLES, "natures_spirit");

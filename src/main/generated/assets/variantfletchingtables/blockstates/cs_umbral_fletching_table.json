@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "variantfletchingtables:block/cs_umbral_fletching_table"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "desolation:block/charred_planks",
+    "east": "variantfletchingtables:block/ds_charred_fletching_table_side",
+    "north": "variantfletchingtables:block/ds_charred_fletching_table_front",
+    "particle": "variantfletchingtables:block/ds_charred_fletching_table_front",
+    "south": "variantfletchingtables:block/ds_charred_fletching_table_front",
+    "up": "variantfletchingtables:block/ds_charred_fletching_table_top",
+    "west": "variantfletchingtables:block/ds_charred_fletching_table_side"
+  }
+}

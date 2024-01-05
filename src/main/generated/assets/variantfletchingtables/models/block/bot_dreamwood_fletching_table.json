@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "botania:block/dreamwood_planks",
+    "east": "variantfletchingtables:block/bot_dreamwood_fletching_table_side",
+    "north": "variantfletchingtables:block/bot_dreamwood_fletching_table_front",
+    "particle": "variantfletchingtables:block/bot_dreamwood_fletching_table_front",
+    "south": "variantfletchingtables:block/bot_dreamwood_fletching_table_front",
+    "up": "variantfletchingtables:block/bot_dreamwood_fletching_table_top",
+    "west": "variantfletchingtables:block/bot_dreamwood_fletching_table_side"
+  }
+}
