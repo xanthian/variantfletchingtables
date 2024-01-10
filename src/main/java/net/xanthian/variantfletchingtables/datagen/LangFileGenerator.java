@@ -40,17 +40,17 @@ public class LangFileGenerator extends FabricLanguageProvider {
     @Override
     public void generateTranslations(TranslationBuilder translationBuilder) {
 
-        translationBuilder.add(Vanilla.ACACIA_FLETCHING_TABLE, "Acacia Fletching_Table");
-        translationBuilder.add(Vanilla.BAMBOO_FLETCHING_TABLE, "Bamboo Fletching_Table");
-        translationBuilder.add(Blocks.FLETCHING_TABLE, "Birch Fletching_Table");
-        translationBuilder.add(Vanilla.CHERRY_FLETCHING_TABLE, "Cherry Fletching_Table");
-        translationBuilder.add(Vanilla.CRIMSON_FLETCHING_TABLE, "Crimson Fletching_Table");
-        translationBuilder.add(Vanilla.DARK_OAK_FLETCHING_TABLE, "Dark Oak Fletching_Table");
-        translationBuilder.add(Vanilla.JUNGLE_FLETCHING_TABLE, "Jungle Fletching_Table");
-        translationBuilder.add(Vanilla.MANGROVE_FLETCHING_TABLE, "Mangrove Fletching_Table");
-        translationBuilder.add(Vanilla.OAK_FLETCHING_TABLE, "Oak Fletching_Table");
-        translationBuilder.add(Vanilla.SPRUCE_FLETCHING_TABLE, "Spruce Fletching_Table");
-        translationBuilder.add(Vanilla.WARPED_FLETCHING_TABLE, "Warped Fletching_Table");
+        translationBuilder.add(Vanilla.ACACIA_FLETCHING_TABLE, "Acacia Fletching Table");
+        translationBuilder.add(Vanilla.BAMBOO_FLETCHING_TABLE, "Bamboo Fletching Table");
+        translationBuilder.add(Blocks.FLETCHING_TABLE, "Birch Fletching Table");
+        translationBuilder.add(Vanilla.CHERRY_FLETCHING_TABLE, "Cherry Fletching Table");
+        translationBuilder.add(Vanilla.CRIMSON_FLETCHING_TABLE, "Crimson Fletching Table");
+        translationBuilder.add(Vanilla.DARK_OAK_FLETCHING_TABLE, "Dark Oak Fletching Table");
+        translationBuilder.add(Vanilla.JUNGLE_FLETCHING_TABLE, "Jungle Fletching Table");
+        translationBuilder.add(Vanilla.MANGROVE_FLETCHING_TABLE, "Mangrove Fletching Table");
+        translationBuilder.add(Vanilla.OAK_FLETCHING_TABLE, "Oak Fletching Table");
+        translationBuilder.add(Vanilla.SPRUCE_FLETCHING_TABLE, "Spruce Fletching Table");
+        translationBuilder.add(Vanilla.WARPED_FLETCHING_TABLE, "Warped Fletching Table");
 
         registerTranslations(translationBuilder, AdAstra.AA_FLETCHING_TABLES);
         registerTranslations(translationBuilder, BeachParty.LDBP_FLETCHING_TABLES);
