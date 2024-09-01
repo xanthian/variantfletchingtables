@@ -18,9 +18,9 @@ import static net.xanthian.variantfletchingtables.Initialise.MOD_ID;
 
 public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
 
-    private static final TagKey<Block> FLETCHING_TABLES = TagKey.of(Registries.BLOCK.getKey(), new Identifier(MOD_ID, "fletching_tables"));
+    private static final TagKey<Block> FLETCHING_TABLES = TagKey.of(Registries.BLOCK.getKey(), Identifier.of(MOD_ID, "fletching_tables"));
 
-    private static final TagKey<Block> C_JOB_SITE = TagKey.of(Registries.BLOCK.getKey(), new Identifier("c:villager_job_sites"));
+    private static final TagKey<Block> C_JOB_SITE = TagKey.of(Registries.BLOCK.getKey(), Identifier.of("c:villager_job_sites"));
 
     public BlockTagGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
@@ -60,9 +60,9 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
 
     private void registerTags(Map<Identifier, Block> blockMap) {
         for (Block block : blockMap.values()) {
-            Identifier lootTableId = block.getLootTableId();
+            Identifier lootTableId = block.getLootTableKey().getValue();
             String newPath = lootTableId.getPath().replaceFirst("blocks/", "");
-            Identifier modifiedId = new Identifier(lootTableId.getNamespace(), newPath);
+            Identifier modifiedId = Identifier.of(lootTableId.getNamespace(), newPath);
             getOrCreateTagBuilder(FLETCHING_TABLES)
                     .addOptional(modifiedId);
         }

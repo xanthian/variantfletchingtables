@@ -2,10 +2,10 @@ package net.xanthian.variantfletchingtables.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.fabricmc.fabric.api.resource.conditions.v1.DefaultResourceConditions;
+import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
 import net.minecraft.block.Block;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
@@ -14,20 +14,21 @@ import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import net.xanthian.variantfletchingtables.block.Vanilla;
 import net.xanthian.variantfletchingtables.block.compatability.*;
 import net.xanthian.variantfletchingtables.utils.ModItemTags;
 
 import java.util.Map;
-import java.util.function.Consumer;
+import java.util.concurrent.CompletableFuture;
 
 public class RecipeGenerator extends FabricRecipeProvider {
-    public RecipeGenerator(FabricDataOutput output) {
-        super(output);
+    public RecipeGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+        super(output, registriesFuture);
     }
 
-    public static void offerFletchingTableRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible table, ItemConvertible planks) {
+    public static void offerFletchingTableRecipe(RecipeExporter exporter, ItemConvertible table, ItemConvertible planks) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, table)
                 .input('@', Items.FLINT)
                 .input('#', planks)
@@ -39,7 +40,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
     }
 
     @Override
-    public void generate(Consumer<RecipeJsonProvider> exporter) {
+    public void generate(RecipeExporter exporter) {
 
         offerFletchingTableRecipe(exporter, Vanilla.ACACIA_FLETCHING_TABLE, Items.ACACIA_PLANKS);
         offerFletchingTableRecipe(exporter, Vanilla.BAMBOO_FLETCHING_TABLE, Items.BAMBOO_PLANKS);
@@ -74,23 +75,23 @@ public class RecipeGenerator extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, Items.FLETCHING_TABLE, 1)
                 .input(ModItemTags.FLETCHING_TABLES)
                 .criterion("has_fletching_table", InventoryChangedCriterion.Conditions.items(Items.FLETCHING_TABLE))
-                .offerTo(exporter, new Identifier("variantfletchingtables", "fletching_table"));
+                .offerTo(exporter, Identifier.of("variantfletchingtables", "fletching_table"));
     }
 
-    public void registerFletchingTableRecipe(Consumer<RecipeJsonProvider> exporter, Map<Identifier, Block> fletching_table, String modId) {
+    public void registerFletchingTableRecipe(RecipeExporter exporter, Map<Identifier, Block> fletching_table, String modId) {
         registerFletchingTableRecipe(exporter, fletching_table, modId, "_planks");
     }
 
-    public void registerFletchingTableRecipe(Consumer<RecipeJsonProvider> exporter, Map<Identifier, Block> bookshelves, String modId, String plankSuffix) {
+    public void registerFletchingTableRecipe(RecipeExporter exporter, Map<Identifier, Block> bookshelves, String modId, String plankSuffix) {
         for (Map.Entry<Identifier, Block> entry : bookshelves.entrySet()) {
             Identifier bookshelfId = entry.getKey();
             Block bookshelf = entry.getValue();
             String path = bookshelfId.getPath();
             String name = path.replace("variantfletchingtables:", "").replace("_fletching_table", "").replaceFirst("^[^_]+_", "");
             String plankPath = modId + ":" + name + plankSuffix;
-            offerFletchingTableRecipe(withConditions(exporter, DefaultResourceConditions.and(DefaultResourceConditions.allModsLoaded(modId),
-                            DefaultResourceConditions.registryContains(RegistryKey.of(RegistryKeys.BLOCK, new Identifier(plankPath))))),
-                    bookshelf, Registries.ITEM.get(new Identifier(plankPath)));
+            offerFletchingTableRecipe(withConditions(exporter, ResourceConditions.and(ResourceConditions.allModsLoaded(modId),
+                            ResourceConditions.registryContains(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(plankPath))))),
+                    bookshelf, Registries.ITEM.get(Identifier.of(plankPath)));
         }
     }
 }

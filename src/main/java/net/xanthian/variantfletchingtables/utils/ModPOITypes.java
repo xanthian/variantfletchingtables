@@ -23,14 +23,12 @@ public class ModPOITypes {
         PointOfInterestType fletcherPoiType = Registries.POINT_OF_INTEREST_TYPE.get(PointOfInterestTypes.FLETCHER);
         List<BlockState> fletcherBlockStates = new ArrayList<>(fletcherPoiType.blockStates);
 
-        for (Block block : Registries.BLOCK) { // Iterate through all blocks
-            if (block instanceof VariantFletchingTableBlock fletchingTableBlock) { // Check if the block is an instance of VariantFletchingTableBlock
+        for (Block block : Registries.BLOCK) {
+            if (block instanceof VariantFletchingTableBlock fletchingTableBlock) {
                 ImmutableList<BlockState> blockStates = fletchingTableBlock.getStateManager().getStates();
-
                 for (BlockState blockState : blockStates) {
                     poiStatesToType.putIfAbsent(blockState, fletcherEntry);
                 }
-
                 fletcherBlockStates.addAll(blockStates);
             }
         }

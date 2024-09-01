@@ -1,0 +1,120 @@
+{
+  "values": [
+    {
+      "id": "variantfletchingtables:jungle_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:mangrove_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:bamboo_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:warped_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:acacia_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:crimson_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:dark_oak_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:cherry_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:oak_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:spruce_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:bls_white_oak_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:bls_charred_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:bls_raw_bamboo_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:cs_scorched_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:cs_umbral_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:dad_echo_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:dad_bloom_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:ds_charred_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:ns_olive_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:ns_joshua_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:ns_redwood_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:ns_wisteria_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:ns_willow_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:ns_cypress_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:ns_maple_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:ns_sugi_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:ns_fir_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:ns_aspen_fletching_table",
+      "required": false
+    },
+    {
+      "id": "variantfletchingtables:tr_rubber_fletching_table",
+      "required": false
+    }
+  ]
+}

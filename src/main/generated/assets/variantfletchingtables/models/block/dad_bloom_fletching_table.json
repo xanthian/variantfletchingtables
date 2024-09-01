@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "deeperdarker:block/bloom_planks",
+    "east": "variantfletchingtables:block/dad_bloom_fletching_table_side",
+    "north": "variantfletchingtables:block/dad_bloom_fletching_table_front",
+    "particle": "variantfletchingtables:block/dad_bloom_fletching_table_front",
+    "south": "variantfletchingtables:block/dad_bloom_fletching_table_front",
+    "up": "variantfletchingtables:block/dad_bloom_fletching_table_top",
+    "west": "variantfletchingtables:block/dad_bloom_fletching_table_side"
+  }
+}

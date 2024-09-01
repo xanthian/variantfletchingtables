@@ -18,7 +18,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
 
-    private static final TagKey<Item> C_JOB_SITE = TagKey.of(Registries.ITEM.getKey(), new Identifier("c:villager_job_sites"));
+    private static final TagKey<Item> C_JOB_SITE = TagKey.of(Registries.ITEM.getKey(), Identifier.of("c:villager_job_sites"));
 
     public ItemTagGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
@@ -51,14 +51,14 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.NON_FLAMMABLE_WOOD)
                 .add(Vanilla.CRIMSON_FLETCHING_TABLE.asItem())
                 .add(Vanilla.WARPED_FLETCHING_TABLE.asItem())
-                .addOptional(new Identifier("variantfletchingtables:bls_herringbone_charred_fletching_table"))
-                .addOptional(new Identifier("variantfletchingtables:bls_herringbone_crimson_fletching_table"))
-                .addOptional(new Identifier("variantfletchingtables:bls_herringbone_warped_fletching_table"))
-                .addOptional(new Identifier("variantfletchingtables:prom_dark_amaranth_fletching_table"))
-                .addOptional(new Identifier("variantfletchingtables:ru_brimwood_fletching_table"))
-                .addOptional(new Identifier("variantfletchingtables:ru_cobalt_fletching_table"))
-                .addOptional(new Identifier("variantfletchingtables:ru_dead_fletching_table"))
-                .addOptional(new Identifier("variantfletchingtables:ru_yellow_bioshroom_fletching_table"));
+                .addOptional(Identifier.of("variantfletchingtables:bls_herringbone_charred_fletching_table"))
+                .addOptional(Identifier.of("variantfletchingtables:bls_herringbone_crimson_fletching_table"))
+                .addOptional(Identifier.of("variantfletchingtables:bls_herringbone_warped_fletching_table"))
+                .addOptional(Identifier.of("variantfletchingtables:prom_dark_amaranth_fletching_table"))
+                .addOptional(Identifier.of("variantfletchingtables:ru_brimwood_fletching_table"))
+                .addOptional(Identifier.of("variantfletchingtables:ru_cobalt_fletching_table"))
+                .addOptional(Identifier.of("variantfletchingtables:ru_dead_fletching_table"))
+                .addOptional(Identifier.of("variantfletchingtables:ru_yellow_bioshroom_fletching_table"));
 
         getOrCreateTagBuilder(C_JOB_SITE)
                 .addTag(ModItemTags.FLETCHING_TABLES);
@@ -66,9 +66,9 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
 
     private void registerTags(Map<Identifier, Block> blockMap) {
         for (Block block : blockMap.values()) {
-            Identifier lootTableId = block.getLootTableId();
+            Identifier lootTableId = block.getLootTableKey().getValue();
             String newPath = lootTableId.getPath().replaceFirst("blocks/", "");
-            Identifier modifiedId = new Identifier(lootTableId.getNamespace(), newPath);
+            Identifier modifiedId = Identifier.of(lootTableId.getNamespace(), newPath);
             getOrCreateTagBuilder(ModItemTags.FLETCHING_TABLES)
                     .addOptional(modifiedId);
         }

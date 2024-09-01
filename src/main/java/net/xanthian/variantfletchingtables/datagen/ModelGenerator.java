@@ -65,7 +65,6 @@ public class ModelGenerator extends FabricModelProvider {
         blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, Models.CUBE.upload(block, textureMap, blockStateModelGenerator.modelCollector)));
     }
 
-    // Allows to loop through the blocks in each class and extract the block name without using registry
     public static void registerModel(BlockStateModelGenerator blockStateModelGenerator, Map<Identifier, Block> blockMap, String modId, Function<String, String> modelPathGenerator) {
         for (Block block : blockMap.values()) {
             String blockName = block.getTranslationKey();

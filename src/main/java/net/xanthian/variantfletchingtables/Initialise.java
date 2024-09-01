@@ -23,41 +23,26 @@ public class Initialise implements ModInitializer {
 
         Vanilla.registerVanillaTables();
 
-        ifModLoaded("ad_astra", AdAstra::registerFletchingTables);
-
-        ifModLoaded("beachparty", BeachParty::registerFletchingTables);
-
-        ifModLoaded("betterarcheology", BetterArcheology::registerFletchingTables);
-
-        ifModLoaded("bewitchment", Bewitchment::registerFletchingTables);
-
-        ifModLoaded("biomemakeover", BiomeMakeover::registerFletchingTables);
-
+        //ifModLoaded("ad_astra", AdAstra::registerFletchingTables);
+        //ifModLoaded("beachparty", BeachParty::registerFletchingTables);
+        //ifModLoaded("betterarcheology", BetterArcheology::registerFletchingTables);
+        //ifModLoaded("bewitchment", Bewitchment::registerFletchingTables);
+        //ifModLoaded("biomemakeover", BiomeMakeover::registerFletchingTables);
         ifModLoaded("blockus", Blockus::registerFletchingTables);
-
-        ifModLoaded("botania", Botania::registerFletchingTables);
-
+        //ifModLoaded("botania", Botania::registerFletchingTables);
         ifModLoaded("cinderscapes", Cinderscapes::registerFletchingTables);
-
         ifModLoaded("deeperdarker", DeeperAndDarker::registerFletchingTables);
-
         ifModLoaded("desolation", Desolation::registerFletchingTables);
-
-        ifModLoaded("eldritch_end", EldritchEnd::registerFletchingTables);
-
-        ifModLoaded("minecells", MineCells::registerFletchingTables);
-
+        //ifModLoaded("ecologics", Ecologics::registerFletchingTables);
+        //ifModLoaded("eldritch_end", EldritchEnd::registerFletchingTables);
+        //ifModLoaded("meadow", Meadow::registerFletchingTables);
+        //ifModLoaded("minecells", MineCells::registerFletchingTables);
         ifModLoaded("natures_spirit", NaturesSpirit::registerFletchingTables);
-
-        ifModLoaded("promenade", Promenade::registerFletchingTables);
-
-        ifModLoaded("regions_unexplored", RegionsUnexplored::registerFletchingTables);
-
-        ifModLoaded("snifferplus", SnifferPlus::registerFletchingTables);
-
+        //ifModLoaded("promenade", Promenade::registerFletchingTables);
+        //ifModLoaded("regions_unexplored", RegionsUnexplored::registerFletchingTables);
+        //ifModLoaded("snifferplus", SnifferPlus::registerFletchingTables);
         ifModLoaded("techreborn", TechReborn::registerFletchingTables);
-
-        ifModLoaded("vinery", Vinery::registerFletchingTables);
+        //ifModLoaded("vinery", Vinery::registerFletchingTables);
 
         ModRegistries.registerFuelandFlammable();
         ModCreativeTab.registerItemGroup();

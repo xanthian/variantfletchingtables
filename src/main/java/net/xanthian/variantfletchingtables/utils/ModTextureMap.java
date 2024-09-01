@@ -10,7 +10,7 @@ public class ModTextureMap extends TextureMap {
     public static TextureMap fletchingTable(Block neswBlock, String plank) {
         return (new ModTextureMap())
                 .put(TextureKey.PARTICLE, getSubId(neswBlock,"_front"))
-                .put(TextureKey.DOWN, new Identifier(plank))
+                .put(TextureKey.DOWN, Identifier.of(plank))
                 .put(TextureKey.UP, getSubId(neswBlock,"_top"))
                 .put(TextureKey.NORTH, getSubId(neswBlock,"_front"))
                 .put(TextureKey.SOUTH, getSubId(neswBlock,"_front"))
