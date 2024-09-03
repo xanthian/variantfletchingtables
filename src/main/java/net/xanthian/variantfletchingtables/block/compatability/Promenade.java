@@ -1,6 +1,9 @@
 package net.xanthian.variantfletchingtables.block.compatability;
 
 import com.google.common.collect.Maps;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.FletchingTableBlock;
 import net.minecraft.item.Item;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -8,7 +11,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.xanthian.variantfletchingtables.Initialise;
-import net.xanthian.variantfletchingtables.block.VariantFletchingTableBlock;
 
 import java.util.Map;
 
@@ -37,6 +39,6 @@ public class Promenade {
     }
 
     public static Block registerFletchingTable(String name) {
-        return register(name, new VariantFletchingTableBlock());
+        return register(name, new FletchingTableBlock(AbstractBlock.Settings.copy(Blocks.FLETCHING_TABLE)));
     }
 }

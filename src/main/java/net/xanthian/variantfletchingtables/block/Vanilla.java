@@ -1,11 +1,13 @@
 package net.xanthian.variantfletchingtables.block;
 
 import com.google.common.collect.Maps;
-import net.minecraft.block.Block;
+import net.minecraft.block.*;
+import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.xanthian.variantfletchingtables.Initialise;
 
@@ -13,17 +15,17 @@ import java.util.Map;
 
 public class Vanilla {
 
-    public static final VariantFletchingTableBlock ACACIA_FLETCHING_TABLE = new VariantFletchingTableBlock();
-    public static final VariantFletchingTableBlock BAMBOO_FLETCHING_TABLE = new VariantFletchingTableBlock();
+    public static final FletchingTableBlock ACACIA_FLETCHING_TABLE = new FletchingTableBlock(AbstractBlock.Settings.copy(Blocks.FLETCHING_TABLE));
+    public static final FletchingTableBlock BAMBOO_FLETCHING_TABLE = new FletchingTableBlock(AbstractBlock.Settings.copy(Blocks.FLETCHING_TABLE));
     // Vanilla Fletching Table is made from Birch
-    public static final VariantFletchingTableBlock CHERRY_FLETCHING_TABLE = new VariantFletchingTableBlock();
-    public static final VariantFletchingTableBlock CRIMSON_FLETCHING_TABLE = new VariantFletchingTableBlock();
-    public static final VariantFletchingTableBlock DARK_OAK_FLETCHING_TABLE = new VariantFletchingTableBlock();
-    public static final VariantFletchingTableBlock JUNGLE_FLETCHING_TABLE = new VariantFletchingTableBlock();
-    public static final VariantFletchingTableBlock MANGROVE_FLETCHING_TABLE = new VariantFletchingTableBlock();
-    public static final VariantFletchingTableBlock OAK_FLETCHING_TABLE = new VariantFletchingTableBlock();
-    public static final VariantFletchingTableBlock SPRUCE_FLETCHING_TABLE = new VariantFletchingTableBlock();
-    public static final VariantFletchingTableBlock WARPED_FLETCHING_TABLE = new VariantFletchingTableBlock();
+    public static final FletchingTableBlock CHERRY_FLETCHING_TABLE = new FletchingTableBlock(AbstractBlock.Settings.copy(Blocks.FLETCHING_TABLE));
+    public static final FletchingTableBlock CRIMSON_FLETCHING_TABLE = new FletchingTableBlock(AbstractBlock.Settings.create().mapColor(MapColor.DULL_PINK).instrument(NoteBlockInstrument.BASS).strength(2.5F).sounds(BlockSoundGroup.WOOD));
+    public static final FletchingTableBlock DARK_OAK_FLETCHING_TABLE = new FletchingTableBlock(AbstractBlock.Settings.copy(Blocks.FLETCHING_TABLE));
+    public static final FletchingTableBlock JUNGLE_FLETCHING_TABLE = new FletchingTableBlock(AbstractBlock.Settings.copy(Blocks.FLETCHING_TABLE));
+    public static final FletchingTableBlock MANGROVE_FLETCHING_TABLE = new FletchingTableBlock(AbstractBlock.Settings.copy(Blocks.FLETCHING_TABLE));
+    public static final FletchingTableBlock OAK_FLETCHING_TABLE = new FletchingTableBlock(AbstractBlock.Settings.copy(Blocks.FLETCHING_TABLE));
+    public static final FletchingTableBlock SPRUCE_FLETCHING_TABLE = new FletchingTableBlock(AbstractBlock.Settings.copy(Blocks.FLETCHING_TABLE));
+    public static final FletchingTableBlock WARPED_FLETCHING_TABLE = new FletchingTableBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_AQUA).instrument(NoteBlockInstrument.BASS).strength(2.5F).sounds(BlockSoundGroup.WOOD));
     public static Map<Identifier, Block> VANILLA_FLETCHING_TABLES = Maps.newHashMap();
 
     public static void registerVanillaTables() {

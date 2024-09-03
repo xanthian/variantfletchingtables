@@ -4,11 +4,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.FletchingTableBlock;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.poi.PointOfInterestType;
 import net.minecraft.world.poi.PointOfInterestTypes;
-import net.xanthian.variantfletchingtables.block.VariantFletchingTableBlock;
 import net.xanthian.variantfletchingtables.mixin.PointOfInterestTypesAccessor;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class ModPOITypes {
         List<BlockState> fletcherBlockStates = new ArrayList<>(fletcherPoiType.blockStates);
 
         for (Block block : Registries.BLOCK) {
-            if (block instanceof VariantFletchingTableBlock fletchingTableBlock) {
+            if (block instanceof FletchingTableBlock fletchingTableBlock) {
                 ImmutableList<BlockState> blockStates = fletchingTableBlock.getStateManager().getStates();
                 for (BlockState blockState : blockStates) {
                     poiStatesToType.putIfAbsent(blockState, fletcherEntry);

@@ -1,8 +1,8 @@
 package net.xanthian.variantfletchingtables.block.compatability;
 
 import com.google.common.collect.Maps;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.item.Item;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FletchingTableBlock;
@@ -33,6 +33,6 @@ public class Desolation {
     }
 
     public static Block registerFletchingTable(String name) {
-        return register(name, new FletchingTableBlock(FabricBlockSettings.copy(Blocks.FLETCHING_TABLE)));
+        return register(name, new FletchingTableBlock(AbstractBlock.Settings.copy(Blocks.FLETCHING_TABLE)));
     }
 }

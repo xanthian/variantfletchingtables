@@ -1,6 +1,9 @@
 package net.xanthian.variantfletchingtables.block.compatability;
 
 import com.google.common.collect.Maps;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.FletchingTableBlock;
 import net.minecraft.item.Item;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -8,7 +11,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.xanthian.variantfletchingtables.Initialise;
-import net.xanthian.variantfletchingtables.block.VariantFletchingTableBlock;
 
 import java.util.Map;
 
@@ -46,9 +48,6 @@ public class RegionsUnexplored {
     public static Block RU_WHITE_PAINTED_FLETCHING_TABLE;
     public static Block RU_WILLOW_FLETCHING_TABLE;
     public static Block RU_YELLOW_PAINTED_FLETCHING_TABLE;
-
-    public static Block RU_CHERRY_FLETCHING_TABLE;
-    public static Block RU_SCULKWOOD_FLETCHING_TABLE;
 
     public static Block RU_BLUE_BIOSHROOM_FLETCHING_TABLE;
     public static Block RU_BRIMWOOD_FLETCHING_TABLE;
@@ -92,9 +91,6 @@ public class RegionsUnexplored {
         RU_WILLOW_FLETCHING_TABLE = registerFletchingTable("ru_willow_fletching_table");
         RU_YELLOW_PAINTED_FLETCHING_TABLE = registerFletchingTable("ru_yellow_painted_fletching_table");
 
-        RU_CHERRY_FLETCHING_TABLE = registerFletchingTable("ru_cherry_fletching_table");
-        RU_SCULKWOOD_FLETCHING_TABLE = registerFletchingTable("ru_sculkwood_fletching_table");
-
         RU_BLUE_BIOSHROOM_FLETCHING_TABLE = registerFletchingTable("ru_blue_bioshroom_fletching_table");
         RU_BRIMWOOD_FLETCHING_TABLE = registerFletchingTable("ru_brimwood_fletching_table");
         RU_COBALT_FLETCHING_TABLE = registerFletchingTable("ru_cobalt_fletching_table");
@@ -115,6 +111,6 @@ public class RegionsUnexplored {
     }
 
     public static Block registerFletchingTable(String name) {
-        return register(name, new VariantFletchingTableBlock());
+        return register(name, new FletchingTableBlock(AbstractBlock.Settings.copy(Blocks.FLETCHING_TABLE)));
     }
 }
